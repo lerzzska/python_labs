@@ -2,7 +2,7 @@ n=int(input('in_1: '))
 ochn=0
 zaochn=0
 for i in range(n):
-    stroka=input(f'n_{i+2}: ')
+    stroka=input(f'in_{i+2}: ')
     d=stroka.split()
     format=d[-1]
     if format=='True':
