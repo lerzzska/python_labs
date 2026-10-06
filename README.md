@@ -1,6 +1,6 @@
-### ЛР2 — Коллекции и матрицы (list/tuple/set/dict)
+# ЛР2 — Коллекции и матрицы (list/tuple/set/dict)
 ## Задание A — arrays.py
-# 1
+### 1
 ```python
 def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
     if not nums:
@@ -12,7 +12,7 @@ def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
 
 ![фото](./images/lab02/arrays1.png)
 
-# 2
+### 2
 ```python 
 def unique_sorted(nums: list[float | int]) -> list[float | int]:
     uni_set=set(nums)
@@ -28,7 +28,7 @@ def unique_sorted(nums: list[float | int]) -> list[float | int]:
 
 ![фото](./images/lab02/arrays2.png)
 
-# 3
+### 3
 ```python
 def flatten(mat: list[list | tuple]) -> list:
     result=[]
@@ -44,7 +44,7 @@ def flatten(mat: list[list | tuple]) -> list:
 ![фото](./images/lab02/arrays3.png)
 
 ## Задание B - matrix.py
-# 1
+### 1
 ```python
 def transpose(mat: list[list[float | int]]) -> list[list]:
     if not mat:
@@ -58,7 +58,7 @@ def transpose(mat: list[list[float | int]]) -> list[list]:
 
 ![фото](./images/lab02/matrix1.png)
 
-# 2
+### 2
 ```python
 def row_sums(mat: list[list[float | int]]) -> list[list]:
     if not mat:
@@ -72,7 +72,7 @@ def row_sums(mat: list[list[float | int]]) -> list[list]:
 
 ![фото](./images/lab02/matrix2.png)
 
-# 3
+### 3
 ```python 
 def col_sums(mat: list[list[float | int]]) -> list[float]:
     for i in mat:
