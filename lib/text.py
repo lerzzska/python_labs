@@ -1,3 +1,4 @@
+
 def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
     result=''
     for i in text:
