@@ -1,4 +1,4 @@
-
+import re
 def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
     result=''
     for i in text:
@@ -18,13 +18,6 @@ def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
 
     return result
 
-print(normalize("ПрИвЕт\nМИр\t"))
-print(normalize("ёжик, Ёлка", yo2e=True))
-print(normalize("Hello\r\nWorld"))
-print(normalize("  двойные   пробелы  "))
-
-
-print('')
 
 
 
@@ -42,14 +35,7 @@ def tokenize(text: str) -> list[str]:
         tokens.append(k)
     return tokens
 
-print(tokenize("привет мир"))
-print(tokenize('hello,world!!!'))
-print(tokenize("по-настоящему круто"))
-print(tokenize("2025 год"))
-print(tokenize("emoji 😀 не слово"))
 
-
-print('')
 
 
 def count_freq(tokens: list[str]) -> dict[str, int]:
@@ -70,15 +56,33 @@ def top_n(freq: dict[str, int], n: int = 5) -> list[tuple[str, int]]:
                 k[j], k[j+1] = k[j+1], k[j]
     return k[:n]
 
-tokens = ["a", "b", "a", "c", "b", "a"]
-freq = count_freq(tokens)
-print(freq)                      
-print(top_n(freq, n=2)) 
 
-print('')
 
-tokens = ["bb", "aa", "bb", "aa", "cc"]
-freq = count_freq(tokens)
-print(freq)                      
-print(top_n(freq, n=2)) 
 
+
+
+if __name__== '__main__':
+
+    assert(normalize("ПрИвЕт\nМИр\t"))
+    assert(normalize("ёжик, Ёлка", yo2e=True))
+    assert(normalize("Hello\r\nWorld"))
+    assert(normalize("  двойные   пробелы  "))
+
+
+    assert(tokenize("привет мир"))
+    assert(tokenize('hello,world!!!'))
+    assert(tokenize("по-настоящему круто"))
+    assert(tokenize("2025 год"))
+    assert(tokenize("emoji 😀 не слово"))
+
+
+    tokens = ["a", "b", "a", "c", "b", "a"]
+    freq = count_freq(tokens)
+    assert(freq)                      
+    assert(top_n(freq, n=2)) 
+
+
+    tokens = ["bb", "aa", "bb", "aa", "cc"]
+    freq = count_freq(tokens)
+    assert(freq)                      
+    assert(top_n(freq, n=2)) 
