@@ -157,12 +157,12 @@ print("Все файлы успешно созданы в data/out/!")
 #
 ![фото](/images/lab05/people_from_json.png)
 #
-- people.xlsx (результат CSV→XLSX)
-#
 #### Как открыть папку в Windows
 1. В левой панели VS Code (проводник), где вы видите ваш файл people.xlsx (в папке data -> out), нажмите на него правой кнопкой мыши.
 2. В выпадающем меню выберите пункт «Reveal in File Explorer» (или «Показать в проводнике»).
 3. Откроется обычное окно папки Windows. Вы увидите там ваш файл people.xlsx.
+#
+- people.xlsx (результат CSV→XLSX)
 #
 ![фото](/images/lab05/peoplexlsx.png)
 #
