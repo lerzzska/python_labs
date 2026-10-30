@@ -148,7 +148,10 @@ def generate_report(input_path: str | Path, output_path: str | Path, encoding: s
 
 ### Проверяем !
 #### A. Один файл (база)
-Дя запуска используем python src/lab04/text_report.py --in data/lab04/input.txt
+Дя запуска используем python 
+```python
+src/lab04/text_report.py --in data/lab04/input.txt
+```
 ###
 ![фото](/images/lab04/inputtxt.png)
 ###
@@ -158,9 +161,10 @@ def generate_report(input_path: str | Path, output_path: str | Path, encoding: s
 
 #### B. Пустой файл
 Очищаем файлик input.txt полностью (он пуст)
+###
 Для запуска используем 
 ```python 
-    python src/lab04/text_report.py --in data/lab04/input.txt
+python src/lab04/text_report.py --in data/lab04/input.txt
 ```
 ###
 ![фото](/images/lab04/breport.png)
@@ -170,11 +174,11 @@ def generate_report(input_path: str | Path, output_path: str | Path, encoding: s
 #### C. Кодировка cp1251
 Пишем 
 ```python 
-    python -c "open('data/input.txt', 'w', encoding='cp1251').write('Привет')"
+python -c "open('data/input.txt', 'w', encoding='cp1251').write('Привет')"
 ```
 Для запуска используем 
 ```python 
-    python src/lab04/text_report.py --in data/input.txt --encoding cp1251
+python src/lab04/text_report.py --in data/input.txt --encoding cp1251
 ```
 ![фото](/images/lab04/creport.png)
 ###
