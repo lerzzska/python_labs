@@ -13,6 +13,7 @@ def ensure_parent_dir(path: str | Path) -> None:
     p.parent.mkdir(parents=True, exist_ok=True)
 ```
 
+
 Эта функция гарантирует, что все родительские папки для указанного файла будут созданы до момента его сохранения. Она принимает путь к файлу и с помощью модуля pathlib определяет директорию, в которой этот файл должен находиться. Метод mkdir(parents=True) позволяет создать всю недостающую цепочку папок, даже если она состоит из нескольких уровней вложенности (например, data/reports/2023). Благодаря параметру exist_ok=True функция не вызовет ошибку, если нужная папка уже существует, что делает её безопасной для многократного использования.
 
 
@@ -148,20 +149,20 @@ def generate_report(input_path: str | Path, output_path: str | Path, encoding: s
 #### A. Один файл (база)
 Дя запуска используем python src/lab04/text_report.py --in data/lab04/input.txt
 ![фото](/images/lab04/inputtxt.png)
-![фото](/images/lab03/report.png)
-![фото](/images/lab03/akonsol.png)
+![фото](/images/lab04/report.png)
+![фото](/images/lab04/akonsol.png)
 
 #### B. Пустой файл
 Очищаем файлик input.txt полностью (он пуст)
 Для запуска используем python src/lab04/text_report.py --in data/lab04/input.txt
-![фото](/images/lab03/breport.png)
-![фото](/images/lab03/bkonsol.png)
+![фото](/images/lab04/breport.png)
+![фото](/images/lab04/bkonsol.png)
 
 #### C. Кодировка cp1251
 Пишем python -c "open('data/input.txt', 'w', encoding='cp1251').write('Привет')"
 Для запуска используем python src/lab04/text_report.py --in data/input.txt --encoding cp1251
-![фото](/images/lab03/creport.png)
-![фото](/images/lab03/ckonsol.png)
+![фото](/images/lab04/creport.png)
+![фото](/images/lab04/ckonsol.png)
 
 
 ### Проверка краевых случаев:
