@@ -1,4 +1,4 @@
-import random  # <--- Добавьте вот эту строку
+import random  
 from src.lab07.sorting import bubble_sort, insertion_sort, selection_sort
 from src.lab07.search import linear_search, binary_search, two_sum_brute, two_sum_fast
 
