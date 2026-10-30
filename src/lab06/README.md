@@ -165,7 +165,7 @@ python -m src.lab06.cli_convert csv2xlsx --in data/samples/people.csv --out data
 2. people_cli.json - результат CSV→JSON
 3. people_cli.xlsx - результат CSV→XLSX
 #
-![photo](/images/lab06/3.png)
+![photo](/images/lab06/4.png)
 
 
 
