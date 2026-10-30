@@ -150,9 +150,11 @@ print("Все файлы успешно созданы в data/out/!")
 
 ### В data/out появляются файлы 
 - people_from_json.csv (результат JSON→CSV)
+#
 ![фото](/images/lab05/people_from_json1.png)
 #
 - people_from_csv.csv (результат CSV→JSON)
+#
 ![фото](/images/lab05/people_from_json.png)
 #
 - people.xlsx (результат CSV→XLSX)
@@ -161,9 +163,11 @@ print("Все файлы успешно созданы в data/out/!")
 1. В левой панели VS Code (проводник), где вы видите ваш файл people.xlsx (в папке data -> out), нажмите на него правой кнопкой мыши.
 2. В выпадающем меню выберите пункт «Reveal in File Explorer» (или «Показать в проводнике»).
 3. Откроется обычное окно папки Windows. Вы увидите там ваш файл people.xlsx.
+#
 ![фото](/images/lab05/peoplexlsx.png)
 #
 - cities.xlsx 
+#
 ![фото](/images/lab05/cities.png)
 
 
