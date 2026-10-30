@@ -79,9 +79,10 @@ def write_csv(rows: Iterable[Sequence], path: str | Path, header: tuple[str, ...
 ### Проверяем !
 #### iniut.txt 
 ![фото](/images/lab04/inputtxt.png)
+#### пишем...
 ![фото](/images/lab04/proverka.png)
 #### check.csv
-![фото](/images/lab03/checkcsv.png)
+![фото](/images/lab04/checkcsv.png)
 
 ### Проверка краевых случаев 
 
@@ -148,20 +149,35 @@ def generate_report(input_path: str | Path, output_path: str | Path, encoding: s
 ### Проверяем !
 #### A. Один файл (база)
 Дя запуска используем python src/lab04/text_report.py --in data/lab04/input.txt
+###
 ![фото](/images/lab04/inputtxt.png)
+###
 ![фото](/images/lab04/report.png)
+###
 ![фото](/images/lab04/akonsol.png)
 
 #### B. Пустой файл
 Очищаем файлик input.txt полностью (он пуст)
-Для запуска используем python src/lab04/text_report.py --in data/lab04/input.txt
+Для запуска используем 
+```python 
+    python src/lab04/text_report.py --in data/lab04/input.txt
+```
+###
 ![фото](/images/lab04/breport.png)
+###
 ![фото](/images/lab04/bkonsol.png)
 
 #### C. Кодировка cp1251
-Пишем python -c "open('data/input.txt', 'w', encoding='cp1251').write('Привет')"
-Для запуска используем python src/lab04/text_report.py --in data/input.txt --encoding cp1251
+Пишем 
+```python 
+    python -c "open('data/input.txt', 'w', encoding='cp1251').write('Привет')"
+```
+Для запуска используем 
+```python 
+    python src/lab04/text_report.py --in data/input.txt --encoding cp1251
+```
 ![фото](/images/lab04/creport.png)
+###
 ![фото](/images/lab04/ckonsol.png)
 
 
