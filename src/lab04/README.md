@@ -169,7 +169,7 @@ python src/lab04/text_report.py --in data/lab04/input.txt
 ###
 ![фото](/images/lab04/breport.png)
 ###
-![фото](/images/lab04/bkonsol.png)
+![фото](/images/lab04/bconsol.png)
 
 #### C. Кодировка cp1251
 Пишем 
