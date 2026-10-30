@@ -41,26 +41,6 @@ def cmd_cat(args):
                 print(f"{i:6}\t{line}", end="")
             else:
                 print(line, end="")
-
-def main():
-    parser = argparse.ArgumentParser(description="CLI-утилита для работы с текстом (ЛР6)")
-    subparsers = parser.add_subparsers(dest="command", required=True, help="Доступные команды")
-
-    # Подкоманда stats
-    stats_parser = subparsers.add_parser("stats", help="Анализ частот слов в тексте")
-    stats_parser.add_argument("--input", required=True, help="Путь к текстовому файлу")
-    stats_parser.add_argument("--top", type=int, default=5, help="Количество топ-слов (по умолчанию 5)")
-    stats_parser.set_defaults(func=cmd_stats)
-
-    # Подкоманда cat
-    cat_parser = subparsers.add_parser("cat", help="Вывод содержимого файла")
-    cat_parser.add_argument("--input", required=True, help="Путь к файлу")
-    cat_parser.add_argument("-n", action="store_true", help="Нумеровать строки")
-    cat_parser.set_defaults(func=cmd_cat)
-
-    args = parser.parse_args()
-    # Вызываем функцию, привязанную к подкоманде
-    args.func(args)
 ```
 ---
 Этот модуль создает консольную утилиту с двумя подкомандами с помощью стандартного модуля argparse. Подкоманда cat читает файл и выводит его построчно, поддерживая флаг -n для нумерации строк (с выравниванием номеров по правому краю). Подкоманда stats использует функции из ЛР3 для нормализации, токенизации текста и подсчета частот, выводя общее количество слов, количество уникальных и топ-N самых частых слов (задается параметром --top). В случае отсутствия входного файла программа выводит понятную ошибку в stderr и завершает работу с кодом 1.
@@ -91,25 +71,6 @@ def handle_convert(func, input_path, output_path):
     except Exception as e:
         print(f"Непредвиденная ошибка: {e}", file=sys.stderr)
         sys.exit(1)
-
-def main():
-    parser = argparse.ArgumentParser(description="CLI-утилита для конвертации данных (ЛР6)")
-    subparsers = parser.add_subparsers(dest="command", required=True, help="Доступные команды")
-
-    # Фабрика для создания одинаковых подкоманд
-    for cmd_name, cmd_help, target_func in [
-        ("json2csv", "Конвертировать JSON в CSV", json_to_csv),
-        ("csv2json", "Конвертировать CSV в JSON", csv_to_json),
-        ("csv2xlsx", "Конвертировать CSV в Excel", csv_to_xlsx)
-    ]:
-        p = subparsers.add_parser(cmd_name, help=cmd_help)
-        p.add_argument("--in", dest="input", required=True, help="Входной файл")
-        p.add_argument("--out", dest="output", required=True, help="Выходной файл")
-        # Привязываем функцию через lambda, чтобы передать target_func
-        p.set_defaults(func=lambda args, f=target_func: handle_convert(f, args.input, args.output))
-
-    args = parser.parse_args()
-    args.func(args)
 ```
 ---
 Этот модуль представляет собой CLI-обертку для функций конвертации, написанных в ЛР5. Он использует argparse для создания трех подкоманд: json2csv, csv2json и csv2xlsx. Каждая команда принимает обязательные аргументы --in (входной файл) и --out (выходной файл). Специальная вспомогательная функция перехватывает возможные ошибки (FileNotFoundError, ValueError), выводит их в понятном виде и завершает работу программы, а в случае успеха печатает зеленую галочку и пути файлов.
