@@ -2,13 +2,6 @@
 ---
 ## Задание A — Утилита для работы с текстом (cli_text.py)
 ```python
-import argparse
-import sys
-from pathlib import Path
-
-# Импорты из ЛР3 (предполагается, что функции лежат в src/lib/text.py)
-from src.lib.text import normalize, tokenize, count_freq, top_n
-
 def cmd_stats(args):
     """Анализ частот слов в тексте."""
     p_in = Path(args.input)
@@ -26,7 +19,8 @@ def cmd_stats(args):
     print(f"Топ-{args.top}:")
     for word, count in top_n(freq, args.top):
         print(f"{word}:{count}")
-
+```
+```python
 def cmd_cat(args):
     """Вывод содержимого файла построчно."""
     p_in = Path(args.input)
@@ -49,14 +43,6 @@ def cmd_cat(args):
 
 ## Задание B — Утилита-конвертер (cli_convert.py)
 ```python
-import argparse
-import sys
-from pathlib import Path
-
-# Импорты из ЛР5
-from src.lab05.json_csv import json_to_csv, csv_to_json
-from src.lab05.csv_xlsx import csv_to_xlsx
-
 def handle_convert(func, input_path, output_path):
     """Вспомогательная функция для вызова конвертеров и обработки ошибок."""
     try:

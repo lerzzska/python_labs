@@ -3,10 +3,6 @@
 ## Задание A — JSON ↔ CSV
 
 ```python
-import json
-import csv
-from pathlib import Path
-
 def json_to_csv(json_path: str, csv_path: str) -> None:
     """Преобразует JSON-файл в CSV. Порядок колонок — как в первом объекте."""
     p_in, p_out = Path(json_path), Path(csv_path)
@@ -32,7 +28,8 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
         writer = csv.DictWriter(f, fieldnames=headers, restval="")
         writer.writeheader()
         writer.writerows(data)
-
+```
+```python
 def csv_to_json(csv_path: str, json_path: str) -> None:
     """Преобразует CSV в JSON. Заголовок обязателен."""
     p_in, p_out = Path(csv_path), Path(json_path)
@@ -60,11 +57,6 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
 ## Задание B — CSV → XLSX
 
 ```python 
-import csv
-from pathlib import Path
-from openpyxl import Workbook
-from openpyxl.utils import get_column_letter
-
 def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
     """Конвертирует CSV в XLSX с автошириной колонок (мин. 8 символов)."""
     p_in, p_out = Path(csv_path), Path(xlsx_path)
